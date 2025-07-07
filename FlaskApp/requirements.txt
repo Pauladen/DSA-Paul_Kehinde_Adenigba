@@ -1,0 +1,9 @@
+Flask
+joblib
+skops
+numpy
+pandas
+matplotlib
+scikit-learn
+Flask-Cors
+shap
