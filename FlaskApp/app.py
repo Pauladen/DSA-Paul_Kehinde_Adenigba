@@ -3,15 +3,18 @@ from joblib import load
 import shap
 import numpy as np
 import pandas as pd
-from flask import Flask, request, render_template, jsonify, url_for
+from flask import Flask, request, render_template, jsonify, url_for, session, redirect
 from flask_cors import CORS
 import matplotlib.pyplot as plt
 import base64
 import io
+from io import StringIO
+import os
 import warnings
 from sklearn.exceptions import InconsistentVersionWarning
 
 app = Flask(__name__)
+app.secret_key = '1234'
 CORS(app)
 
 # Explicitly specify trusted types
@@ -80,28 +83,42 @@ def predict():
     # Predict sale price
     prediction = model.predict(input_scaled_df)[0]
 
-    # SHAP explanation — use raw (unscaled) input_df with model.predict
-    #explainer = shap.Explainer(model.predict, input_df)
-    #shap_values = explainer(input_df)
-
-    # Matplotlib-compatible SHAP plot
-    #fig, ax = plt.subplots(figsize=(8, 4))
-    #shap.plots.waterfall(shap_values[0], show=False)
-
-    # Save to buffer
-    #buf = io.BytesIO()
-    #fig.savefig(buf, format='png', bbox_inches='tight')
-    #buf.seek(0)
-    #image_base64 = base64.b64encode(buf.read()).decode('utf-8')
-    #plt.close(fig)
+    # Store raw input in session for SHAP use
+    session['last_input'] = input_scaled_df.to_json()
 
     print("Prediction complete. Sending JSON response.")
 
-
     return jsonify({
-        'prediction': round(prediction, 2)
-        #'shap_plot': image_base64
+        'prediction': round(prediction, 2),
+        'shap_link': url_for('shap_page')
     })
+
+@app.route('/shap')
+def shap_page():
+    if 'last_input' not in session:
+        return render_template("shap.html", shap_plot=None)
+
+    input_df = pd.read_json(StringIO(session['last_input']))
+
+    # SHAP logic
+    try:
+        explainer = shap.Explainer(model)
+        shap_values = explainer(input_df)
+
+        fig, ax = plt.subplots(figsize=(8, 4))
+        shap.plots.waterfall(shap_values[0], show=False)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format='png', bbox_inches='tight')
+        buf.seek(0)
+        image_base64 = base64.b64encode(buf.read()).decode('utf-8')
+        plt.close(fig)
+
+        return render_template("shap.html", shap_plot=image_base64)
+    except Exception as e:
+        print(f"SHAP plot error: {e}")
+        return render_template("shap.html", shap_plot=None)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

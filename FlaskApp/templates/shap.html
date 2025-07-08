@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHAP Explanation</title>
+</head>
+<body>
+    <h1>SHAP Feature Contribution</h1>
+    {% if shap_plot %}
+        <img src="data:image/png;base64,{{ shap_plot }}" alt="SHAP Plot">
+    {% else %}
+        <p>No prediction input available for SHAP explanation.</p>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
