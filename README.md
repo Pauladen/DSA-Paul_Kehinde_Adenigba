@@ -18,3 +18,10 @@ In this example, **'Overall Quality Rating'** (6 in the input form) and **'Year 
 
 ### Definition of Features
 
+* **Overall Qual**: Rates the overall material and finish of the house
+* **Gr Liv Area**: Above grade (ground) living area square feet
+* **Garage Area**: Size of garage in square feet
+* **Year Built**: Original construction date
+* **BsmtFin SF 1**: Type 1 finished basement square feet
+* **Garage Cars**: Size of garage in car capacity
+* **Full Bath**: Full bathrooms above grad
