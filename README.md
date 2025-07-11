@@ -1,6 +1,25 @@
 # DSA-Paul_Kehinde_Adenigba
 DSA AI/ML Final Project: Design and Deployment of an AI-Powered Predictive System.
 
+# 🏠 Ames House Sale Price Estimator
+**A Machine Learning Web Application with SHAP Explainability**
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Prediction
 <img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Sreenshots/prediction.png" width="100%" height="auto"/>
 
