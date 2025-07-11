@@ -47,41 +47,131 @@ shap_values = explainer(X_test)
 shap.plots.waterfall(shap_values[0])
 ```
 
+---
 
+### 📀 Model Serialization
+```sio.dump(optimal_gbr_mod, './Ames_Sale_Price_Model.skops')
+joblib.dump(scaler_7_features, './scaler.joblib')
+```
+* Model saved using skops for secure deserialization
+* Scaler saved via joblib
 
+---
 
+### 🌐 Flask Web Application (Deployed Locally via PyCharm)
 
+### 🧠 Backend Logic (app.py)
+* Framework: Flask
+* Model Loading: `skops.io.load()` with trusted types
+* Prediction Endpoint: /predict
+ * Receives JSON payload
+ * Scales input
+ * Predicts price
+ * Stores the last input in session for SHAP
+* SHAP Plot Endpoint: /shap
+ * Generates a SHAP waterfall plot for the most recent prediction
 
+### 🔐 Security
+* Uses Flask session with `secret_key` for storing SHAP input securely
+* Trusted scikit-learn types specified explicitly to avoid deserialization risks
 
+---
 
+### Frontend Design
+`index.html`
+* Clean form UI for user input
+* Background image set with `{{ image_url }}`
+* Responsive design with loading spinner
+* Asynchronous form submission via `fetch()`
+* Displays predicted price with a SHAP explanation button
 
+`shap.html`
+* Displays a base64-encoded SHAP waterfall plot
+* Includes a fallback if session input is missing
+* “Back to Home” button for smooth navigation
 
+---
 
+### User Workflow
+1. **User visits home page** → Fills out house feature form
+2. **Clicks “Predict”** → Flask predicts using the trained model
+3. **Prediction displayed** → Click “View SHAP Explanation”
+4. **SHAP page** shows a visual breakdown of the model prediction
 
+---
 
-
-
-## Prediction
+### 🎯 Example Prediction
 <img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Sreenshots/prediction.png" width="100%" height="auto"/>
 
-## Impacts of Features on the Prediction
+### Example SHAP Plot
+Visual representation of how each feature contributed to the final sale price prediction.
+`<img src="data:image/png;base64,{{ shap_plot }}" alt="SHAP Plot">`
+(actual image embedded in app)
+
 <img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Sreenshots/explanations.png" width="100%" height="auto"/>
 
-The **SHAP (SHapeley Addition explanation)** waterfall plot visually represents how individual features contribute to a prediction.
+### 📌 Key Components 
+* **🎯f(x) (Predicted Output)**: The final predicted value, which is $159,913.227 in this plot.
+* **📊E[f(x)] (Expected Base Value)**: The starting point of the waterfall, representing the average prediction for the dataset, which is $184,521.424 in this plot.
 
-### Key Components 
-* **f(x) (Predicted Output)**: The final predicted value, which is $159,913.227 in this plot.
-* **E[f(x)] (Expected Base Value)**: The starting point of the waterfall, representing the average prediction for the dataset, which is $184,521.424 in this plot.
+### 🔍 Interpretation
+In this example:
+**🟥'Overall Quality Rating'** (input=6) and **'Year Built'** (input=1960) contributed negatively, decreasing the predicted price.
+**🟩'Living Area Sq Ft'** (input=1656 Sq Ft) and **'Basement Finished Sq Ft'** (input=639 Sq Ft) contributed positively, increasing the predicted price above the base value.
 
-### Interpretation
-In this example, **'Overall Quality Rating'** (6 in the input form) and **'Year Built'** (1960 in the input form) significantly decreased the predicted house sale price from baseline ($184,521.424), while **'Living Area Sq Ft'** (1656 Sq Ft in the input form) and **'Basement Finished Sq Ft'** (639 Sq Ft in the input form) significantly increased it.
+### 🧱 Features Definitions
+**Feature**      **Description**
 
-### Definition of Features
+* **🧱Overall Qual** Rates the overall material and finish of the house
+* **📐Gr Liv Area** Above grade (ground) living area square feet
+* **🚗Garage Area** Size of garage in square feet
+* **🏚Year Built** Original construction date
+* **🛠BsmtFin SF 1** Type 1 finished basement square feet
+* **🚙Garage Cars** Size of garage in car capacity
+* **🚿Full Bath** Full bathrooms above grad
 
-* **Overall Qual**: Rates the overall material and finish of the house
-* **Gr Liv Area**: Above grade (ground) living area square feet
-* **Garage Area**: Size of garage in square feet
-* **Year Built**: Original construction date
-* **BsmtFin SF 1**: Type 1 finished basement square feet
-* **Garage Cars**: Size of garage in car capacity
-* **Full Bath**: Full bathrooms above grad
+---
+
+### 💡 Key Highlights
+* End-to-end ML workflow (data → model → deployment)
+* Secure model serialization with skops
+* Transparent model predictions using SHAP
+* Full-stack integration with Flask + JS frontend
+
+---
+
+### 📁 File Structure
+├── requirements.txt
+├── app.py
+├── Ames_Sale_Price_Model.skops
+├── scaler.joblib
+├── templates/
+│   ├── index.html
+│   └── shap.html
+├── static/
+│   └── images/
+│       └── Ames_image.jpeg
+
+---
+
+### 🚀 How to Run Locally
+-- Clone repository
+```git clone https://github.com/yourusername/ames-price-estimator.git
+cd ames-price-estimator
+```
+
+-- Install requirements
+`pip install -r requirements.txt`
+
+-- Run Flask app
+```python app.py
+Open browser at: http://127.0.0.1:5000
+```
+
+---
+
+
+
+
+
+
