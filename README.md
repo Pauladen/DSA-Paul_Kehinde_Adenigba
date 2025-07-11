@@ -210,6 +210,12 @@ skops + joblib       |	Secure model persistence
 
 ### <img width="64" height="64" alt="image" src="https://github.com/user-attachments/assets/f294387a-cd39-42c3-b5d2-06c188a1eb79" /> Author
 
+**[Adenigba, Paul Kehinde]**
+
+Data Scientist & Machine Learning Engineer
+[LinkedIn](https://www.linkedin.com/in/paul-kehinde-adenigba-a4b182304) | [GitHub](https://github.comPauladen/DSA-Adenigba_Paul_Kehinde.git) 
+
+
 
 
 
