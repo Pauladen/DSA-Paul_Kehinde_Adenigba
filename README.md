@@ -44,7 +44,8 @@ This produced a barplot of the top 7 important features.
 ### ✅ Model Explainability (SHAP)
 ```explainer = shap.Explainer(optimal_gbr_mod)
 shap_values = explainer(X_test)
-shap.plots.waterfall(shap_values[0])```
+shap.plots.waterfall(shap_values[0])
+```
 
 
 
