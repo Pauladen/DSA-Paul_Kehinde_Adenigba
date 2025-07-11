@@ -118,7 +118,9 @@ Visual representation of how each feature contributed to the final sale price pr
 
 ### 🔍 Interpretation
 In this example:
+
 **🟥'Overall Quality Rating'** (input=6) and **'Year Built'** (input=1960) contributed negatively, decreasing the predicted price.
+
 **🟩'Living Area Sq Ft'** (input=1656 Sq Ft) and **'Basement Finished Sq Ft'** (input=639 Sq Ft) contributed positively, increasing the predicted price above the base value.
 
 ### 🧱 Features Definitions
