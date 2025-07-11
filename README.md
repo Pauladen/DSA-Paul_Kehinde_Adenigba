@@ -16,6 +16,36 @@ DSA AI/ML Final Project: Design and Deployment of an AI-Powered Predictive Syste
 
 ---
 
+### 📊 Problem Statement
+**Objective:** Predict house sale prices in Ames, Iowa based on structured features.
+
+The model should:
+* Accept user input through a web form
+* Predict sale price using a trained regression model
+* Show interpretable explanations using SHAP (Shapeley Additive Explanations)
+
+---
+
+### 🧪 Data Preprocessing and Modeling (Jupyter Notebook)
+
+### ✅ Feature Selection and Scaling
+* Selected 7 high-impact features based on feature importance:
+ * `Overall Qual`, `Gr Liv Area`, `Garage Area`, `Year Built`, `BsmtFin SF 1`, `Garage Cars`, `Full Bath`
+ * Standardized input features using StandardScaler.
+
+### ✅ Model Training
+* Algorithm: `GradientBoosting Regressor`
+* Hyperparameters optimized via `optuna`
+* Final Model: `optimal_gbr0`
+### ✅ Feature Importance Visualization
+`plot_feature_importance_type1(optimal_gbr_mod, X_train.columns, top_n=7)`
+
+This produced a barplot of the top 7 important features.
+### ✅ Model Explainability (SHAP)
+```explainer = shap.Explainer(optimal_gbr_mod)
+shap_values = explainer(X_test)
+shap.plots.waterfall(shap_values[0])```
+
 
 
 
