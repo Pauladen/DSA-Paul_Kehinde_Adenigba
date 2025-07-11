@@ -42,7 +42,8 @@ The model should:
 
 This produced a barplot of the top 7 important features.
 ### ✅ Model Explainability (SHAP)
-```explainer = shap.Explainer(optimal_gbr_mod)
+```
+explainer = shap.Explainer(optimal_gbr_mod)
 shap_values = explainer(X_test)
 shap.plots.waterfall(shap_values[0])
 ```
@@ -50,7 +51,8 @@ shap.plots.waterfall(shap_values[0])
 ---
 
 ### 📀 Model Serialization
-```sio.dump(optimal_gbr_mod, './Ames_Sale_Price_Model.skops')
+```
+sio.dump(optimal_gbr_mod, './Ames_Sale_Price_Model.skops')
 joblib.dump(scaler_7_features, './scaler.joblib')
 ```
 * Model saved using skops for secure deserialization
@@ -142,29 +144,43 @@ In this example:
 
 ### 📁 File Structure
 ├── requirements.txt
+
 ├── app.py
+
 ├── Ames_Sale_Price_Model.skops
+
 ├── scaler.joblib
+
 ├── templates/
+
 │   ├── index.html
+
 │   └── shap.html
+
 ├── static/
+
 │   └── images/
+
 │       └── Ames_image.jpeg
 
 ---
 
 ### 🚀 How to Run Locally
 -- Clone repository
-```git clone https://github.com/yourusername/ames-price-estimator.git
+
+```
+git clone https://github.com/yourusername/ames-price-estimator.git
 cd ames-price-estimator
 ```
 
 -- Install requirements
+
 `pip install -r requirements.txt`
 
 -- Run Flask app
-```python app.py
+
+```
+python app.py
 Open browser at: http://127.0.0.1:5000
 ```
 
