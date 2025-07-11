@@ -208,6 +208,7 @@ Matplotlib/Seaborn   |	Visualizations
 skops + joblib       |	Secure model persistence
 
 
+### <img width="64" height="64" alt="image" src="https://github.com/user-attachments/assets/f294387a-cd39-42c3-b5d2-06c188a1eb79" /> Author
 
 
 
