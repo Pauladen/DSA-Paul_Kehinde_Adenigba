@@ -3,8 +3,18 @@ DSA AI/ML Final Project: Design and Deployment of an AI-Powered Predictive Syste
 
 # 🏠 Ames House Sale Price Estimator
 **A Machine Learning Web Application with SHAP Explainability**
+
 ---
 
+ ### 🔍 Overview
+ The Ames House Price Estimator is a full-stack machine learning web application that predicts house sale prices based on key structural features. It leverages:
+ * **Gradient Boosting Regression**
+ * **Feature Engineering & Selection**
+ * **Model explainability using SHAP**
+ * **Flask for deployment**
+ * **Interactive frontend with SHAP visualizations**
+
+---
 
 
 
