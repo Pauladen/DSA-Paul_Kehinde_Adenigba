@@ -105,7 +105,9 @@ joblib.dump(scaler_7_features, './scaler.joblib')
 ### 🎯 Example Prediction
 <img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Sreenshots/prediction.png" width="100%" height="auto"/>
 
-### Example SHAP Plot
+---
+
+### 📈 Example SHAP Plot
 Visual representation of how each feature contributed to the final sale price prediction.
 `<img src="data:image/png;base64,{{ shap_plot }}" alt="SHAP Plot">`
 (actual image embedded in app)
