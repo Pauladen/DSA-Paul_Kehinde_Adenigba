@@ -186,6 +186,27 @@ Open browser at: http://127.0.0.1:5000
 
 ---
 
+### 🧠 Future Enhancements
+* Deploy on Hugging Face Spaces / Render / AWS
+* Expand to include categorical and engineered features
+* Enable CSV upload and batch predictions
+* Add XAI dashboards (e.g., SHAP summary or force plots)
+
+---
+
+### 📚 Technologies Used
+Tool                 |     Purpose
+---------------------|-------------
+Python               |	Core ML and logic
+Scikit-learn         |	Model training and scaling
+SHAP                 |	Explainability
+Flask                |	Web framework
+HTML/CSS/JS          |	Frontend UI
+Matplotlib/Seaborn   |	Visualizations
+skops + joblib       |	Secure model persistence
+
+
+
 
 
 
