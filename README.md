@@ -126,15 +126,14 @@ In this example:
 **🟩'Living Area Sq Ft'** (input=1656 Sq Ft) and **'Basement Finished Sq Ft'** (input=639 Sq Ft) contributed positively, increasing the predicted price above the base value.
 
 ### 🧱 Features Definitions
-**Feature**      **Description**
 
-* **🧱Overall Qual** Rates the overall material and finish of the house
-* **📐Gr Liv Area** Above grade (ground) living area square feet
-* **🚗Garage Area** Size of garage in square feet
-* **🏚Year Built** Original construction date
-* **🛠BsmtFin SF 1** Type 1 finished basement square feet
-* **🚙Garage Cars** Size of garage in car capacity
-* **🚿Full Bath** Full bathrooms above grad
+* **🧱Overall Qual-** Rates the overall material and finish of the house
+* **📐Gr Liv Area-** Above grade (ground) living area square feet
+* **🚗Garage Area-** Size of garage in square feet
+* **🏚Year Built-** Original construction date
+* **🛠BsmtFin SF 1-** Type 1 finished basement square feet
+* **🚙Garage Cars-** Size of garage in car capacity
+* **🚿Full Bath-** Full bathrooms above grad
 
 ---
 
