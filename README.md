@@ -17,17 +17,27 @@ DSA AI/ML Final Project: Design and Deployment of an AI-Powered Predictive Syste
 ---
 
 ### 📊 Problem Statement
-Users of the real estate platform struggle to estimate an appropriate sale price budget without manually comparing multiple listings. This inefficiency results in poor user experience. A solution is needed to quickly estimate sale prices based on known home characteristics and help users understand what influences the predicted value.
+Users of the real estate platform struggle to estimate an appropriate sale price budget without manually comparing multiple listings. This inefficiency leads to a poor user experience. A solution is needed to quickly estimate sale prices based on known home characteristics and help users understand the factors that influence the predicted value.
 
 ### 🧠 Project Question
 How can we design a machine learning-powered budget estimator that predicts house sale prices based on user-defined features and explains feature contributions using SHAP plots to improve customer experience and decision-making on the real estate aggregation platform?
 
-**Objective:** Predict house sale prices in Ames, Iowa based on structured features.
+### 🎯 Objective:
+Predict house sale prices in Ames, Iowa based on structured features.
 
 The model should:
-* Accept user input through a web form
-* Predict sale price using a trained regression model
-* Show interpretable explanations using SHAP (Shapeley Additive Explanations)
+* 📝 Accept user input through a web form
+
+* 🤖 Predict sale price using a trained regression model
+
+* 📊 Show interpretable explanations using SHAP (Shapley Additive Explanations)
+
+
+### 🗂️ Project Category 
+* Real Estate Analytics
+  
+### 🛠️ Project Subcategories
+* Machine Learning · Regression Modeling · Model Explainability (SHAP) · Web Application Development
 
 ---
 
