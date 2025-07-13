@@ -16,6 +16,15 @@ DSA AI/ML Final Project: Design and Deployment of an AI-Powered Predictive Syste
 
 ---
 
+### 📊 Dataset Source
+Ames Housing Dataset
+
+📥 Download from: Kaggle - [Ames Housing Dataset](https://www.kaggle.com/datasets/prevek18/ames-housing-dataset)
+
+🧾 Original Source: [De Cock, D. (2011). Ames, Iowa: Alternative to the Boston Housing Data as an End of Semester Regression Project](https://www.openml.org/search?type=data&sort=runs&id=42165&status=active)
+
+---
+
 ### 📊 Problem Statement
 Users of the real estate platform struggle to estimate an appropriate sale price budget without manually comparing multiple listings. This inefficiency leads to a poor user experience. A solution is needed to quickly estimate sale prices based on known home characteristics and help users understand the factors that influence the predicted value.
 
