@@ -127,7 +127,7 @@ joblib.dump(scaler_7_features, './scaler.joblib')
 ---
 
 ### 🎯 Example Prediction
-<img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Sreenshots/prediction.png" width="100%" height="auto"/>
+<img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Screenshots/prediction.png" width="100%" height="auto"/>
 
 ---
 
@@ -136,7 +136,7 @@ Visual representation of how each feature contributed to the final sale price pr
 `<img src="data:image/png;base64,{{ shap_plot }}" alt="SHAP Plot">`
 (actual image embedded in app)
 
-<img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Sreenshots/explanations.png" width="100%" height="auto"/>
+<img src="https://github.com/Pauladen/DSA-Paul_Kehinde_Adenigba/raw/main/Screenshots/explanations.png" width="100%" height="auto"/>
 
 ### 📌 Key Components 
 * **🎯f(x) (Predicted Output)**: The final predicted value, which is $159,913.227 in this plot.
